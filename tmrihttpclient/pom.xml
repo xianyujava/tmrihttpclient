@@ -1,0 +1,255 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<!--<parent>-->
+		<!--<groupId>org.springframework.boot</groupId>-->
+		<!--<artifactId>spring-boot-starter-parent</artifactId>-->
+		<!--<version>2.1.6.RELEASE</version>-->
+		<!--<relativePath/> &lt;!&ndash; lookup parent from repository &ndash;&gt;-->
+	<!--</parent>-->
+	<groupId>com.tmrihttpclient</groupId>
+	<artifactId>tmrihttpclient</artifactId>
+	<version>1.1.1</version>
+	<name>tmrihttpclient</name>
+	<description>Demo project for Spring Boot</description>
+	<url>https://github.com/xianyujava/tmrihttpclient.git</url>
+	<licenses>
+		<license>
+			<name>The ApacheSoftware License, Version 2.0</name>
+			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+			<distribution>repo</distribution>
+		</license>
+	</licenses>
+	<developers>
+		<developer>
+			<name>xianyu_java</name>
+			<email>yujian_java@163.com</email>
+		</developer>
+	</developers>
+	<scm>
+		<tag>master</tag>
+		<connection>https://github.com/xianyujava/tmrihttpclient.git</connection>
+		<developerConnection>https://github.com/xianyujava/tmrihttpclient</developerConnection>
+		<url>https://github.com/xianyujava/tmrihttpclient.git</url>
+
+	</scm>
+
+
+	<properties>
+		<skipTests>true</skipTests>
+		<java.version>1.8</java.version>
+		<slf4j.version>1.7.10</slf4j.version>
+		<log4j.version>2.13.3</log4j.version>
+		<springboot.version>2.1.6.RELEASE</springboot.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.compiler.soure>1.8</maven.compiler.soure>
+		<naven.compiler.target>1.8</naven.compiler.target>
+	</properties>
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<!-- Import dependency management from Spring Boot -->
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-dependencies</artifactId>
+				<version>${springboot.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<dependencies>
+
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-autoconfigure</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-autoconfigure</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-mapper-asl</artifactId>
+			<version>1.9.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-jaxrs</artifactId>
+			<version>1.9.2</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.codehaus.jackson</groupId>
+			<artifactId>jackson-xc</artifactId>
+			<version>1.9.2</version>
+		</dependency>
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.2</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.httpcomponents</groupId>
+			<artifactId>httpclient</artifactId>
+			<version>4.2.4</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+			<artifactId>commons-beanutils</artifactId>
+			<version>1.8.3</version>
+		</dependency>
+		<dependency>
+			<groupId>commons-collections</groupId>
+			<artifactId>commons-collections</artifactId>
+			<version>3.2.1</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-pool2</artifactId>
+			<version>2.0</version>
+		</dependency>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>14.0</version>
+		</dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>3.1</version>
+		</dependency>
+		<dependency>
+			<groupId>com.sanlian</groupId>
+			<artifactId>net_comm_pps_client</artifactId>
+			<version>1.0</version>
+			<!--<scope>system</scope>-->
+		</dependency>
+
+	</dependencies>
+
+
+
+	<profiles>
+
+		<profile>
+			<id>ossrh</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-compiler-plugin</artifactId>
+						<version>3.1</version>
+						<configuration>
+							<source>1.8</source>
+							<target>1.8</target>
+							<encoding>UTF-8</encoding>
+						</configuration>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-source-plugin</artifactId>
+						<version>2.2.1</version>
+
+						<executions>
+							<execution>
+								<phase>package</phase>
+								<goals>
+									<goal>jar-no-fork</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<!-- Javadoc -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<version>2.9</version>
+						<!--<executions>-->
+						<!--<execution>-->
+						<!--<phase>package</phase>-->
+						<!--<goals>-->
+						<!--<goal>jar</goal>-->
+						<!--</goals>-->
+						<!--</execution>-->
+						<!--</executions>-->
+						<executions>
+							<execution>
+								<id>attach-javadocs</id>
+								<goals>
+									<goal>jar</goal>
+								</goals>
+								<configuration>
+									<encoding>UTF-8</encoding>
+									<aggregate>true</aggregate>
+									<charset>UTF-8</charset>
+									<docencoding>UTF-8</docencoding>
+									<additionalparam>-Xdoclint:none</additionalparam>
+								</configuration>
+							</execution>
+						</executions>
+					</plugin>
+					<!-- GPG -->
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-gpg-plugin</artifactId>
+						<version>1.6</version>
+						<executions>
+							<execution>
+								<id>sign-artifacts</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>sign</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+					<!--<plugin>-->
+					<!--<groupId>org.sonatype.plugins</groupId>-->
+					<!--<artifactId>nexus-staging-maven-plugin</artifactId>-->
+					<!--<version>1.6.7</version>-->
+					<!--<extensions>true</extensions>-->
+					<!--<configuration>-->
+					<!--<serverId>ossrh</serverId>-->
+					<!--<nexusUrl>https://oss.sonatype.org/</nexusUrl>-->
+					<!--<autoReleaseAfterClose>true</autoReleaseAfterClose>-->
+					<!--</configuration>-->
+					<!--</plugin>-->
+				</plugins>
+			</build>
+
+		</profile>
+
+	</profiles>
+	<distributionManagement>
+		<snapshotRepository>
+			<id>ossrh</id>
+			<url>
+				https://oss.sonatype.org/content/repositories/snapshots
+			</url>
+		</snapshotRepository>
+		<repository>
+			<id>ossrh</id>
+			<url>
+				https://oss.sonatype.org/service/local/staging/deploy/maven2
+			</url>
+		</repository>
+	</distributionManagement>
+
+</project>
